@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@layer base {
+  /* =========================================================================
+     STYLE 1: ROYAL CRIMSON & GOLD (Heritage Stanbax Style)
+     ========================================================================= */
+  :root,
+  html[data-theme="crimson-gold"],
+  body[data-theme="crimson-gold"] {
+    --theme-id: "crimson-gold";
+    --theme-name: "Royal Crimson & Gold";
+    --color-cream: #FDFBF7;
+    --color-cream-light: #FFFCF5;
+    --color-cream-dark: #F5EFE1;
+    --color-black: #111827;
+    --color-yellow: #EAB308;
+    --color-yellow-gold: #F59E0B;
+    --color-red: #DC2626;
+    --color-red-deep: #B91C1C;
+
+    --theme-primary: #991B1B;
+    --theme-secondary: #7F1D1D;
+    --theme-accent: #F59E0B;
+    --theme-surface: #FDFBF7;
+    --theme-scrollbar-track: #F5EFE1;
+    --theme-scrollbar-thumb: #CA8A04;
+    --theme-scrollbar-hover: #B91C1C;
+  }
+
+  /* =========================================================================
+     STYLE 2: SAPPHIRE OXFORD & SKY (Modern Collegiate & Academic Tech)
+     ========================================================================= */
+  html[data-theme="sapphire-collegiate"],
+  body[data-theme="sapphire-collegiate"] {
+    --theme-id: "sapphire-collegiate";
+    --theme-name: "Sapphire Oxford & Sky";
+    --color-cream: #F8FAFC;
+    --color-cream-light: #FFFFFF;
+    --color-cream-dark: #EDF2F7;
+    --color-black: #0F172A;
+
+    /* Dynamic remap of red utilities to Oxford Navy & Royal Blue */
+    --color-red-50: #eff6ff;
+    --color-red-100: #dbeafe;
+    --color-red-200: #bfdbfe;
+    --color-red-300: #93c5fd;
+    --color-red-400: #60a5fa;
+    --color-red-500: #3b82f6;
+    --color-red-600: #2563eb;
+    --color-red-700: #1d4ed8;
+    --color-red-800: #1e40af;
+    --color-red-900: #1e3a8a;
+    --color-red-950: #0f172a;
+
+    /* Dynamic remap of amber utilities to Sky Cyan & Ice Platinum */
+    --color-amber-50: #f0f9ff;
+    --color-amber-100: #e0f2fe;
+    --color-amber-200: #bae6fd;
+    --color-amber-300: #7dd3fc;
+    --color-amber-400: #38bdf8;
+    --color-amber-500: #0ea5e9;
+    --color-amber-600: #0284c7;
+    --color-amber-700: #0369a1;
+    --color-amber-800: #075985;
+    --color-amber-900: #0c4a6e;
+    --color-amber-950: #082f49;
+
+    --color-yellow: #38bdf8;
+    --color-yellow-gold: #0ea5e9;
+    --color-red: #2563eb;
+    --color-red-deep: #1e3a8a;
+
+    --theme-primary: #1E3A8A;
+    --theme-secondary: #1D4ED8;
+    --theme-accent: #38BDF8;
+    --theme-surface: #F8FAFC;
+    --theme-scrollbar-track: #E2E8F0;
+    --theme-scrollbar-thumb: #0EA5E9;
+    --theme-scrollbar-hover: #1E3A8A;
+  }
+
+  /* =========================================================================
+     STYLE 3: EMERALD IVY & BRONZE (Classical Cambridge Ivy League)
+     ========================================================================= */
+  html[data-theme="emerald-ivy"],
+  body[data-theme="emerald-ivy"] {
+    --theme-id: "emerald-ivy";
+    --theme-name: "Emerald Ivy & Bronze";
+    --color-cream: #F4F7F4;
+    --color-cream-light: #FCFDFC;
+    --color-cream-dark: #E6EDE6;
+    --color-black: #052e16;
+
+    /* Dynamic remap of red utilities to Deep Forest & Emerald Ivy Green */
+    --color-red-50: #f0fdf4;
+    --color-red-100: #dcfce7;
+    --color-red-200: #bbf7d0;
+    --color-red-300: #86efac;
+    --color-red-400: #4ade80;
+    --color-red-500: #22c55e;
+    --color-red-600: #16a34a;
+    --color-red-700: #15803d;
+    --color-red-800: #166534;
+    --color-red-900: #064e3b;
+    --color-red-950: #022c22;
+
+    /* Dynamic remap of amber utilities to Antique Bronze & Champagne Gold */
+    --color-amber-50: #fffbeb;
+    --color-amber-100: #fef3c7;
+    --color-amber-200: #fde68a;
+    --color-amber-300: #fcd34d;
+    --color-amber-400: #fbbf24;
+    --color-amber-500: #f59e0b;
+    --color-amber-600: #d97706;
+    --color-amber-700: #b45309;
+    --color-amber-800: #92400e;
+    --color-amber-900: #78350f;
+    --color-amber-950: #451a03;
+
+    --color-yellow: #fbbf24;
+    --color-yellow-gold: #d97706;
+    --color-red: #15803d;
+    --color-red-deep: #064e3b;
+
+    --theme-primary: #064E3B;
+    --theme-secondary: #15803D;
+    --theme-accent: #D97706;
+    --theme-surface: #F4F7F4;
+    --theme-scrollbar-track: #E2EBE2;
+    --theme-scrollbar-thumb: #D97706;
+    --theme-scrollbar-hover: #064E3B;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-black, #111827);
+    font-family: 'Nunito', sans-serif;
+  }
+
+  /* Custom scrollbar matching active theme colors */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--theme-scrollbar-track, #F5EFE1);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--theme-scrollbar-thumb, #CA8A04);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-scrollbar-hover, #B91C1C);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
